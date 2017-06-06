@@ -1,11 +1,8 @@
-<?php
-  $zip = $_POST['zipcode'];
-?>
 <!DOCTYPE html>
 <html>
   <body>
   <?php 
-  echo "Generating ", $zip; 
+  echo "Generating ", $_POST['zipcode']; 
   ?>
   </body>
 </html>
