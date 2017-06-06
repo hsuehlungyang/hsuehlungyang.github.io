@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <?php
-echo "Hello";
-?>
+    <p id = "demo" />
+    <script>
+      document.getElementById("demo").innerHTML = "Hi";
+    </script>
   </body>
 </html>
