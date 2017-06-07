@@ -7,7 +7,7 @@
 <input id="numb" placeholder = '#####'>
 <button type="button" onclick="myFunction()">Submit</button>
  <form name="InventoryList" method="post" action="InventoryList.asp">
-          <select name="SelBranch" class="bnotes" size="5" multiple="multiple">
+          <select name="SelBranch" class="bnotes" size="5" multiple="multiple" id = "selmul">
           <option value="All">All</option>
           <option value="001 Renton">001 Renton</option>
           <option value="002 Spokane">002 Spokane</option>
@@ -27,6 +27,10 @@
    <script language="JavaScript">
        function GetInventory()
        {
+         $('#selmul').multiselect({
+
+        includeSelectAllOption: true
+    });
          var InvForm = document.forms.InventoryList;
          var SelBranchVal = "";
          var x = 0;
