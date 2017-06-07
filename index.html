@@ -6,71 +6,45 @@
   <p>Enter zip code</p>
 <input id="numb" placeholder = '#####'>
 <button type="button" onclick="myFunction()">Submit</button>
-  <script>
-  var expanded = false;
+  <form id="form1">
 
-function showCheckboxes() {
-  var checkboxes = document.getElementById("checkboxes");
-  if (!expanded) {
-    checkboxes.style.display = "block";
-    expanded = true;
-  } else {
-    checkboxes.style.display = "none";
-    expanded = false;
-  }
-}
-.multiselect {
-  width: 200px;
-}
+<div style="padding:20px">
 
-.selectBox {
-  position: relative;
-}
+<select id="chkveg" multiple="multiple">
 
-.selectBox select {
-  width: 100%;
-  font-weight: bold;
-}
+    <option value="cheese">Cheese</option>
+    <option value="tomatoes">Tomatoes</option>
+    <option value="mozarella">Mozzarella</option>
+    <option value="mushrooms">Mushrooms</option>
+    <option value="pepperoni">Pepperoni</option>
+    <option value="onions">Onions</option>
 
-.overSelect {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-}
+</select>
 
-#checkboxes {
-  display: none;
-  border: 1px #dadada solid;
-}
+<br /><br />
 
-#checkboxes label {
-  display: block;
-}
+<input type="button" id="btnget" value="Get Selected Values" />
 
-#checkboxes label:hover {
-  background-color: #1e90ff;
-}
-  <form>
-  <div class="multiselect">
-    <div class="selectBox" onclick="showCheckboxes()">
-      <select>
-        <option>Select an option</option>
-      </select>
-      <div class="overSelect"></div>
-    </div>
-    <div id="checkboxes">
-      <label for="one">
-        <input type="checkbox" id="one" />First checkbox</label>
-      <label for="two">
-        <input type="checkbox" id="two" />Second checkbox</label>
-      <label for="three">
-        <input type="checkbox" id="three" />Third checkbox</label>
-    </div>
-  </div>
+<script type="text/javascript">
+
+$(function() {
+
+    $('#chkveg').multiselect({
+
+        includeSelectAllOption: true
+    });
+
+    $('#btnget').click(function(){
+
+        alert($('#chkveg').val());
+    });
+});
+
+</script>
+
+</div>
+
 </form>
-  </script>
 <p id="demo"></p>
 
 <script>
