@@ -19,7 +19,17 @@
           </select>
 
          <input type="button" name="ViewReport" value="View" class="bnotes" onclick="GetInventory();">
+<script type="text/javascript">
 
+$(function() {
+
+    $('#chkveg').multiselect({
+
+        includeSelectAllOption: true
+    });
+});
+
+</script>
    </form>
   <p id="demo"></p>
   <p id = "dem"></p>
@@ -27,10 +37,6 @@
    <script language="JavaScript">
        function GetInventory()
        {
-         $('#selmul').multiselect({
-
-        includeSelectAllOption: true
-    });
          var InvForm = document.forms.InventoryList;
          var SelBranchVal = "";
          var x = 0;
