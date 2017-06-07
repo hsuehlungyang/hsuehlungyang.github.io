@@ -52,11 +52,12 @@ function showCheckboxes() {
   <form>
   <div class="multiselect">
     <div class="selectBox" onclick="showCheckboxes()">
-      <select id = "selectMultiple">
+      <select>
         <option>Select an option</option>
             </select>
       <div class="overSelect"></div>
     </div>
+    <select>
     <div id="checkboxes">
       <label for="one">
         <input type="checkbox" id="one" />First checkbox</label>
@@ -65,6 +66,7 @@ function showCheckboxes() {
       <label for="three">
         <input type="checkbox" id="three" />Third checkbox</label>
     </div>
+    </select>
   </div>
 </form>
 <p id="demo"></p>
