@@ -52,7 +52,7 @@ function showCheckboxes() {
   <form>
   <div class="multiselect">
     <div class="selectBox" onclick="showCheckboxes()">
-      <select>
+      <select id = "selectMultiple">
         <option>Select an option</option>
             </select>
       <div class="overSelect"></div>
@@ -75,8 +75,8 @@ function myFunction() {
     // Get the value of the input field with id="numb"
     x = document.getElementById("numb").value;
     document.getElementById("demo").innerHTML = x;
-  y = document.getElementById("checkboxes").value;
-  document.getElementById("checkboxes").innerHTML = y;
+  y = document.getElementById("selectMultiple").value;
+  document.getElementById("selectMultiple").innerHTML = y;
 }
 </script>
 
