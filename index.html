@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title> Random Restaurant Generator </title>
-  </head>
-  <body>
-    <form action = "generate.html">
-      <label>Enter Zip Code</label>
-      <input type = "text" name = "zipcode" placeholder = "#####" >
-      <input type = "submit" name = "submit" value = "Submit" >
-    </form>
-  </body>
-</html>
+<body>
+
+<h1>Random Restaurant Generator</h1>
+  <p>Enter zip code</p>
+<input id="numb">
+
+<button type="button" onclick="myFunction()">Submit</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var x, text;
+
+    // Get the value of the input field with id="numb"
+    x = document.getElementById("numb").value;
+
+    document.getElementById("demo").innerHTML = x;
+}
+</script>
+
+</body>
+</html> 
