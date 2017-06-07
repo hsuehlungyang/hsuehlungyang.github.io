@@ -1,67 +1,76 @@
 <!DOCTYPE html>
 <html>
-  <head>
-  <link rel="stylesheet" href="css/bootstrap-3.1.1.min.css" type="text/css" />
-<link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css" />
-
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
-<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
-<script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
-  </head>
 <body>
 
 <h1>Random Restaurant Generator</h1>
   <p>Enter zip code</p>
 <input id="numb" placeholder = '#####'>
 <button type="button" onclick="myFunction()">Submit</button>
-  <form id="form1">
-
-<div style="padding:20px">
-
-<select id="chkveg" multiple="multiple">
-
-    <option value="cheese">Cheese</option>
-    <option value="tomatoes">Tomatoes</option>
-    <option value="mozarella">Mozzarella</option>
-    <option value="mushrooms">Mushrooms</option>
-    <option value="pepperoni">Pepperoni</option>
-    <option value="onions">Onions</option>
-
-</select>
-
-<br /><br />
-
-<input type="button" id="btnget" value="Get Selected Values" />
-
-<script type="text/javascript">
-
-$(function() {
-
-    $('#chkveg').multiselect({
-
-        includeSelectAllOption: true
-    });
-
-    $('#btnget').click(function(){
-
-        alert($('#chkveg').val());
-    });
-});
-
-</script>
-
-</div>
-
+  <script>
+  var expanded = false;
+function showCheckboxes() {
+  var checkboxes = document.getElementById("checkboxes");
+  if (!expanded) {
+    checkboxes.style.display = "block";
+    expanded = true;
+  } else {
+    checkboxes.style.display = "none";
+    expanded = false;
+  }
+}
+.multiselect {
+  width: 200px;
+}
+.selectBox {
+  position: relative;
+}
+.selectBox select {
+  width: 100%;
+  font-weight: bold;
+}
+.overSelect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+#checkboxes {
+  display: none;
+  border: 1px #dadada solid;
+}
+#checkboxes label {
+  display: block;
+}
+#checkboxes label:hover {
+  background-color: #1e90ff;
+}
+  <form>
+  <div class="multiselect">
+    <div class="selectBox" onclick="showCheckboxes()">
+      <select>
+        <option>Select an option</option>
+      </select>
+      <div class="overSelect"></div>
+    </div>
+    <div id="checkboxes">
+      <label for="one">
+        <input type="checkbox" id="one" />First checkbox</label>
+      <label for="two">
+        <input type="checkbox" id="two" />Second checkbox</label>
+      <label for="three">
+        <input type="checkbox" id="three" />Third checkbox</label>
+    </div>
+  </div>
 </form>
+  </script>
 <p id="demo"></p>
 
 <script>
 function myFunction() {
     var x, text;
-
     // Get the value of the input field with id="numb"
     x = document.getElementById("numb").value;
-
     document.getElementById("demo").innerHTML = x;
 }
 </script>
