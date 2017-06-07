@@ -6,6 +6,19 @@
   <p>Enter zip code</p>
 <input id="numb" placeholder = '#####'>
 <button type="button" onclick="myFunction()">Submit</button>
+  
+  var expanded = false;
+
+function showCheckboxes() {
+  var checkboxes = document.getElementById("checkboxes");
+  if (!expanded) {
+    checkboxes.style.display = "block";
+    expanded = true;
+  } else {
+    checkboxes.style.display = "none";
+    expanded = false;
+  }
+}
 .multiselect {
   width: 200px;
 }
