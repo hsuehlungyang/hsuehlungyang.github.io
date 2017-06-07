@@ -22,7 +22,7 @@
 
    </form>
   <p id="demo"></p>
-
+  <p id = "dem"></p>
 
    <script language="JavaScript">
        function GetInventory()
@@ -39,7 +39,7 @@
              SelBranchVal = SelBranchVal + " , " + InvForm.SelBranch[x].value;
             }
          }
-         document.write(SelBranchVal);
+         document.getElementById("dem").innerHTML = SelBranchVal;
          var x;
     // Get the value of the input field with id="numb"
     x = document.getElementById("numb").value;
