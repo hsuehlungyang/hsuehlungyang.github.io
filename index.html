@@ -5,7 +5,6 @@
 <h1>Random Restaurant Generator</h1>
   <p>Enter zip code</p>
 <input id="numb" placeholder = '#####'>
-<button type="button" onclick="myFunction()">Submit</button>
  <form name="InventoryList" method="post" action="InventoryList.asp">
           <select name="SelBranch" class="bnotes" size="5" multiple="multiple" id = "selmul">
           <option value="All">All</option>
@@ -19,17 +18,7 @@
           </select>
 
          <input type="button" name="ViewReport" value="View" class="bnotes" onclick="GetInventory();">
-<script type="text/javascript">
 
-$(function() {
-
-    $('#chkveg').multiselect({
-
-        includeSelectAllOption: true
-    });
-});
-
-</script>
    </form>
   <p id="demo"></p>
   <p id = "dem"></p>
@@ -58,15 +47,6 @@ $(function() {
 
 
   </script>
-
-<script>
-function myFunction() {
-    var x;
-    // Get the value of the input field with id="numb"
-    x = document.getElementById("numb").value;
-    document.getElementById("demo").innerHTML = x;
-}
-</script>
 
 </body>
 </html> 
