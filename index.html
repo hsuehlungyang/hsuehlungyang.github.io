@@ -36,10 +36,10 @@
             if (InvForm.SelBranch[x].selected)
             {
              //alert(InvForm.SelBranch[x].value);
-             SelBranchVal = SelBranchVal + "," + InvForm.SelBranch[x].value;
+             SelBranchVal = SelBranchVal + " , " + InvForm.SelBranch[x].value;
             }
          }
-         alert(SelBranchVal);
+         document.getElementById("demo").innerHTML = SelBranchVal;
          var x;
     // Get the value of the input field with id="numb"
     x = document.getElementById("numb").value;
