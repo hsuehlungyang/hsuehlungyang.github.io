@@ -49,7 +49,7 @@ function showCheckboxes() {
   background-color: #1e90ff;
 }
   </style>
-  <form>
+  <form name = "selectMultiple">
   <div class="multiselect">
     <div class="selectBox" onclick="showCheckboxes()">
       <select>
@@ -75,7 +75,17 @@ function myFunction() {
     // Get the value of the input field with id="numb"
     x = document.getElementById("numb").value;
     document.getElementById("demo").innerHTML = x;
-alert($('selectMultiple').val());
+var y = document.forms.selectMultiple;
+  var z = "";
+  var w = 0;
+  for (w = 0; w < y.checkboxes.length; w++)
+  {
+    if (y.checkboxes[w].selected)
+    {
+      z = z + " , " + y.checkboxes[w].value;
+    }
+  }
+  document.getElementById("demo").innerHTML = z;
 }
 </script>
 
