@@ -46,7 +46,7 @@ select.size = select.length;
          var y;
     // Get the value of the input field with id="numb"
     y = document.getElementById("numb").value;
-         if (y < 10000 || y > 99999)
+         if (y.length != 5)
          {
             document.getElementById("demo").innerHTML = "Please enter in a valid zip code";
          }
