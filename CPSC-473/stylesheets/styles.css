@@ -1,16 +1,30 @@
 body
 {
 	font-size: 10px;
+	background: rgb(149, 194, 215);
 }
 
 a
 {
 	text-decoration: none;
 }
+
 .thumbnail-image
 {
 	width: 100%;
 	display: block;
+}
+
+.thumbnail-item
+{
+	display: block;
+	border: 1px solid rgb(100%, 100%, 100%);
+	border 1px solid rgba(100%, 100%, 100%, 0.8);
+}
+
+.thumbnail-list
+{
+	list-style: none;
 }
 
 .thumbnail-title
