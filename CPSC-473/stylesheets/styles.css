@@ -15,6 +15,11 @@ a
 	display: block;
 }
 
+.thumbnail-item + .thumbnail.item
+{
+	margin-top: 10px;
+}
+
 .thumbnail-item
 {
 	display: block;
