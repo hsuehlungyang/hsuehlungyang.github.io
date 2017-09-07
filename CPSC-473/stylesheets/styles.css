@@ -7,6 +7,11 @@ a
 {
 	text-decoration: none;
 }
+.thumbnail-image
+{
+	width: 100%;
+	display: block;
+}
 
 .thumbnail-title
 {
