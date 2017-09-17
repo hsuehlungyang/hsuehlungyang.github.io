@@ -1,6 +1,10 @@
 var DETAIL_IMAGE_SELECTOR = '[data-image-role = "target"]';
 var DETAIL_TITLE_SELECTOR = '[data-image-role = "title"]';
 var THUMBNAIL_LINK_SELECTOR = '[data-image-role = "trigger"]';
+var DETAIL_FRAME_SELECTOR = '[data=image-role = "trigger"]';
+var HIDDEN_DETAIL_CLASS = 'hidden-detail';
+var TINE_EFFECT_CLASS = 'is-tiny';
+var ESC_KEY = 27;
 
 function setDetails(imageUrl, titleText) {
 	'use strict';
@@ -27,24 +31,40 @@ function setDetailsFromThumb(thumbnail) {
 }
 
 function addThumbClickHandler(thumb) {
-	'use strict';
 	thumb.add.EventListener('click', function (event) {
 		event.preventDefault();
 		setDetailsFromThumb(thumb);
+		showDetails();
 	});
 }
 
 function getThumbnailsArray() {
 	'use strict';
 	var thumbnails = document.querySelectorAll(THUMBNAIL_LINK_SELECTOR);
-	var thumbnailArray = [].slice.call(thumbnails(;
+	var thumbnailArray = [].slice.call(thumbnails);
 	return thumbnailArray;
+}
+
+function hideDetails() {
+	'use strict';
+	document.body.classList.add(HIDDEN_DETAIL_CLASS);
+}
+
+function showDetails() {
+	'use strict';
+	var frame = document.querySelector(DETAIL_FRAME_SELECTOR);
+	document.body.classList.remove(HIDDEN_DETAIL_CLASS);
+	frame.classList;add(TINE_EFFECT_CLASS);
+	setTimeout(function () {
+		frame.classList.remove(TINY_EFFECT_CLASS);
+	}, 50);
 }
 
 function initializeEvents() {
 	'use strict';
 	var thumbnails = getThumbnailsArray();
 	thumbnails.forEach(addThumbClickHandler);
+	addKeyPressHandler();
 }
 
 initializeEvents();
