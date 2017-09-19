@@ -5,13 +5,16 @@ var THUMBNAIL_LINK_SELECTOR = '[data-image-role="trigger"]';
 var HIDDEN_DETAIL_CLASS = 'hidden-detail';
 var TINY_EFFECT_CLASS = 'is-tiny';
 var ESC_KEY = 27;
+var randomNum = Math.floor(Math.random() * 6 + 1);
+
+function randomNumber() {
+  randomNum = Math.floor(Math.random() * 6 + 1);
+}
 
 function setDetails(imageUrl, titleText) {
   'use strict';
-
   var detailImage = document.querySelector(DETAIL_IMAGE_SELECTOR);
   detailImage.setAttribute('src', imageUrl);
-
   var detailTitle = document.querySelector(DETAIL_TITLE_SELECTOR);
   detailTitle.textContent = titleText;
 }
@@ -28,7 +31,13 @@ function titleFromThumb(thumbnail) {
 
 function setDetailsFromThumb(thumbnail) {
   'use strict';
-  setDetails(imageFromThumb(thumbnail), titleFromThumb(thumbnail));
+  if (imageFromThumb(thumbnail) == "img/otter" + randomNum + ".jpg") {
+    randomNumber();
+    setDetails("img/tacocat.jpg", titleFromThumb(thumbnail));
+  }
+  else {
+    setDetails(imageFromThumb(thumbnail), titleFromThumb(thumbnail));
+  }
 }
 
 function addThumbClickHandler(thumb) {
@@ -50,7 +59,7 @@ function hideDetails() {
   'use strict';
   document.body.classList.add(HIDDEN_DETAIL_CLASS);
 }
-
+ 
 function showDetails() {
   'use strict';
   var frame = document.querySelector(DETAIL_FRAME_SELECTOR);
