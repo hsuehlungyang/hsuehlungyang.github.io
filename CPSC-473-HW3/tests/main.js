@@ -12,3 +12,6 @@
   formHandler.addSubmitHandler(myTruck.createOrder.bind(myTruck));
   console.log(formHandler);
 })(window);
+
+var fs = require('fs');
+filedata = fs.eval(require('fs').readFileSync('./main.js', 'utf8'));
