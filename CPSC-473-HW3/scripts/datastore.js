@@ -14,7 +14,7 @@
     return this.data[key];
 };
 
-  DataStore.prototype.getAll = functoin() {
+  DataStore.prototype.getAll = function() {
     return this.data;
 };
 
